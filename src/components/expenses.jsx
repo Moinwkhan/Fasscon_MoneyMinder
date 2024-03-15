@@ -10,12 +10,9 @@ const Expenses = ({
   expenseCount,
   userId,
 }) => {
-
   useEffect(() => {
     fetchData();
   }, [userId]);
-
-  console.log(userId);
 
   const total = totalExpense + totalIncome;
   const expensesPercentage = (totalExpense / total) * 100;
@@ -36,6 +33,9 @@ const Expenses = ({
             })}
           />
         </div>
+        <h3 style={{ position: "absolute",top:"55%", left: "22%", color: "#FF6347" }}>
+          Saving
+        </h3>
         <div>
           <CircularProgressbar
             value={savingsPercentage}
@@ -62,6 +62,7 @@ const Expenses = ({
             })}
           />
         </div>
+
         <div>
           <CircularProgressbar
             value={incomeCount}
@@ -73,6 +74,9 @@ const Expenses = ({
             })}
           />
         </div>
+        <h3 style={{ position: "absolute",top:"94%", left: "21%", color: "#20B2AA" }}>
+          Expenses
+        </h3>
       </div>
       <div className="info">
         <p className="info1">Saving: Rs. {totalIncome}</p>
